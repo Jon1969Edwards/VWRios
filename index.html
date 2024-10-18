@@ -130,37 +130,44 @@
         }
     }
 
-    // Set up the modals and buttons
+    // Set up the modals and buttons for both dropdown and footer links
     function setUpModalEvents() {
-        // Open the Privacy Policy modal when "Privacy Policy" button is clicked
+        // Dropdown buttons
         const privacyButton = document.getElementById('open-privacy');
-        if (privacyButton) {
-            privacyButton.addEventListener('click', function () {
-                openModal('privacy-modal');
-                hideDropdownMenu();  // Automatically hide dropdown when clicked
-                hideNavbarCollapse();  // Automatically hide the navbar collapse when clicked
-            });
-        }
-
-        // Open the Terms of Use modal when "Terms of Use" button is clicked
         const termsButton = document.getElementById('open-terms');
-        if (termsButton) {
-            termsButton.addEventListener('click', function () {
-                openModal('terms-modal');
-                hideDropdownMenu();  // Automatically hide dropdown when clicked
-                hideNavbarCollapse();  // Automatically hide the navbar collapse when clicked
-            });
-        }
-
-        // Open the Disclaimer modal when "Disclaimer" button is clicked
         const disclaimerButton = document.getElementById('open-disclaimer');
-        if (disclaimerButton) {
-            disclaimerButton.addEventListener('click', function () {
-                openModal('disclaimer-modal');
-                hideDropdownMenu();  // Automatically hide dropdown when clicked
-                hideNavbarCollapse();  // Automatically hide the navbar collapse when clicked
-            });
-        }
+
+        // Footer links
+        const footerPrivacy = document.getElementById('footer-privacy');
+        const footerTerms = document.getElementById('footer-terms');
+        const footerDisclaimer = document.getElementById('footer-disclaimer');
+
+        // Open the Privacy Policy modal when "Privacy Policy" button or footer link is clicked
+        const openPrivacyModal = function () {
+            openModal('privacy-modal');
+            hideDropdownMenu();  // Hide dropdown when clicked (if applicable)
+            hideNavbarCollapse();  // Hide navbar collapse (if applicable)
+        };
+        if (privacyButton) privacyButton.addEventListener('click', openPrivacyModal);
+        if (footerPrivacy) footerPrivacy.addEventListener('click', openPrivacyModal);
+
+        // Open the Terms of Use modal when "Terms of Use" button or footer link is clicked
+        const openTermsModal = function () {
+            openModal('terms-modal');
+            hideDropdownMenu();  // Hide dropdown when clicked (if applicable)
+            hideNavbarCollapse();  // Hide navbar collapse (if applicable)
+        };
+        if (termsButton) termsButton.addEventListener('click', openTermsModal);
+        if (footerTerms) footerTerms.addEventListener('click', openTermsModal);
+
+        // Open the Disclaimer modal when "Disclaimer" button or footer link is clicked
+        const openDisclaimerModal = function () {
+            openModal('disclaimer-modal');
+            hideDropdownMenu();  // Hide dropdown when clicked (if applicable)
+            hideNavbarCollapse();  // Hide navbar collapse (if applicable)
+        };
+        if (disclaimerButton) disclaimerButton.addEventListener('click', openDisclaimerModal);
+        if (footerDisclaimer) footerDisclaimer.addEventListener('click', openDisclaimerModal);
 
         // Add event listener to close modals when clicking on the close button
         document.querySelectorAll('.modal-close').forEach(button => {
@@ -185,6 +192,7 @@
     setUpModalEvents();
 });
 
+
         </script>
 
         <!-- Masthead-->
@@ -193,7 +201,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
                         <img class="img-fluid" src="assets/img/vwr_logo_white.png" alt="..." />
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Lorem ipsum odor amet, consectetuer adipiscing elit.</h2>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
                         <a class="btn btn-primary" href="#about">Get Started</a>
                     </div>
                 </div>
@@ -648,28 +656,28 @@
         <!-- DESKTOP ONLY: Footer Menu -->
     <div id="footer">
 
-        <div class="footer-links">
-  
-          <div class="dropdown">
-            <button id="dropdownMenuBtn">Legal</button>
-            <div id="dropdownMenu" class="dropdown-content">
-              <button id="open-privacy">Privacy Policy</button>
-              <button id="open-terms">Terms of Use</button>
-              <button id="open-disclaimer">Disclaimer</button>
-            </div>
-          </div>
-          
-          <button id="open-aboutUs">About Us</button>
-          <button id="footer-email-button">Contact Us</button>
-        </div>
+        <ul class="footer-links">
+            <li><a href="#" id="footer-privacy">Privacy Policy</a></li>
+            <li><a href="#" id="footer-terms">Terms of Use</a></li>
+            <li><a href="#" id="footer-disclaimer">Disclaimer</a></li>
+        </ul>
   
         <div class="footer-copyright">
           <img src="/assets/img/vwr_logo.png" alt="VWR Logo" />
         </div>
   
         <div class="footer-buttons">
-          <button id="static-page-btn" class="btns">Virtual Experience</button>
+            <a href="virtual-experience.html">
+                <button id="static-page-btn" class="btns">Virtual Experience</button>
+            </a>
         </div>
+
+        <script>
+            document.getElementById('static-page-btn').addEventListener('click', function() {
+                window.location.href = 'virtual-experience.html';  // Replace with your desired HTML file
+            });
+        </script>
+        
   
       </div> <!-- Footer end -->
         <!-- Footer-->
