@@ -92,27 +92,5 @@ window.addEventListener('DOMContentLoaded', event => {
 // ********************* FOOTER: END *************->
 
 
-handleDropdownMenu();
-
-function setUpModalEvents() {
-    // Add event listeners for open buttons
-    document.getElementById('open-privacy').addEventListener('click', () => openModal('privacy-modal'));
-    document.getElementById('open-terms').addEventListener('click', () => openModal('terms-modal'));
-    document.getElementById('open-disclaimer').addEventListener('click', () => openModal('disclaimer-modal'));
-    document.getElementById('open-aboutUs').addEventListener('click', () => openModal('aboutUs-modal'));
-
-
-    // Close modals (all modal close buttons)
-    document.querySelectorAll('.modal-close').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const modal = e.target.closest('.modal');
-            closeModal(modal.id);
-        });
-    });
-  };
-
-  // Activate modalevents function
-  setUpModalEvents();
-
 
 });
