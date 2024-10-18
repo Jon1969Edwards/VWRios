@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>VWR</title>
+        <link rel="icon" type="image/x-icon" href="assets/vwr.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/footer.css" rel="stylesheet" />
+        <style>
+            .masthead {
+                height: 100vh;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), #000),
+                            url("/assets/img/dock.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">
+                    <img src="assets/img/VWR-Consulting-(PNG).png" alt="Home" style="height: 40px;">
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#legal" id="dropdownMenuBtn">Legal</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Dropdown Menu Structure -->
+        <div id="dropdownMenu" class="dropdown-content">
+            <button id="open-privacy">Privacy Policy</button>
+            <button id="open-terms">Terms of Use</button>
+            <button id="open-disclaimer">Disclaimer</button>
+        </div>
+        
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const dropdownMenuBtn = document.getElementById('dropdownMenuBtn');
+                const dropdownMenu = document.getElementById('dropdownMenu');
+
+                // Ensure elements exist
+                if (dropdownMenuBtn && dropdownMenu) {
+                    console.log("Dropdown button and menu found!");
+
+                    // Toggle display on click
+                    dropdownMenuBtn.addEventListener('click', function (event) {
+                        event.stopPropagation();  // Stop the event from propagating to the window
+                        event.stopImmediatePropagation();  // Prevent other handlers from executing
+                        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                        console.log("Dropdown display toggled:", dropdownMenu.style.display);
+                    });
+
+                    // Close the dropdown when clicking outside, using 'mousedown' instead of 'click'
+                    window.addEventListener('mousedown', function (event) {
+                        if (!dropdownMenu.contains(event.target) && !dropdownMenuBtn.contains(event.target)) {
+                            dropdownMenu.style.display = 'none';
+                            console.log("Dropdown closed due to outside click");
+                        }
+                    });
+                } else {
+                    console.error('Dropdown button or menu not found');
+                }
+            });
+
+
+
+
+
+        </script>
+
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <img class="img-fluid" src="assets/img/vwr_logo_white.png" alt="..." />
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Lorem ipsum odor amet, consectetuer adipiscing elit.</h2>
+                        <a class="btn btn-primary" href="#about">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white mb-4">Welcome to VWR!</h2>
+                        <p class="text-white-50">
+                            With 15+ years in virtual world management, we offer expert services from concept to live environment management. Our diverse artists and robust development team ensure your vision is brought to life. Global 24/7 support included.
+                        </p>
+                    </div>
+                </div>
+                <img class="img-fluid" src="assets/img/screens-removebg.png" alt="..." />
+            </div>
+        </section>
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7">
+                        <img class="img-fluid mb-3 mb-lg-0 grayscale-hover" src="assets/img/VWR_Architectural_Rendering.png" alt="..." />
+                    </div>
+                    
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Architectural Rendering</h4>
+                            <p class="text-black-50 mb-0">Need to bring your architectural designs to life? We use Unreal Engine to create top-notch videos, still images, and virtual walkthroughs for any project. From towering office buildings to charming homes, we've got you covered! Want to see your vision in vivid detail? Let's get started!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project One Row-->
+                <div class="mb-lg-5">
+                    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center"> 
+                        <div class="col-lg-6">
+                            <video class="img-fluid grayscale-hover" autoplay muted loop playsinline>
+                                <source src="assets/video/VWR_Entertainment_Production_.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                                        <h4 class="text-white">Entertainment Production</h4>
+                                        <p class="mb-0 text-white-50">Looking to create a video game? You've come to the right place! </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Two Row-->
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-lg-6">
+                            <video class="img-fluid grayscale-hover" autoplay muted loop playsinline>
+                                <source src="assets/video/VWR_Entertainment_Production.webm" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="col-lg-6 order-lg-first">
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex mb-lg-5 h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-right">
+                                        <p class="mb-0 text-white-50">We offer end-to-end services for game development, from concept to launch. Storyboarding, design, programming—you name it, we do it. Ready to make some magic together?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <!-- Text Column: Show first on larger screens -->
+                    <div class="col-xl-4 col-lg-5 order-lg-1">
+                        <div class="featured-text2 text-center text-lg-left">
+                            <h4>Project Management</h4>
+                            <p class="text-black-50 mb-0">Overwhelmed by project details? Our team specializes in project management with an emphasis on support services. From the initial planning stages to final execution, we handle the heavy lifting so you can focus on your goals. Let’s make your project a success!</p>
+                        </div>
+                    </div>
+                
+                    <!-- Image Column: Show second on larger screens -->
+                    <div class="col-xl-8 col-lg-7 order-lg-2">
+                        <img class="img-fluid mb-3 mb-lg-0 grayscale-hover" src="assets/img/VWR_Project_Management .png" alt="..." />
+                    </div>
+                </div>
+                
+
+                <!-- Project One Row-->
+                <div class="mb-lg-5">
+                    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center"> 
+                        <div class="col-lg-6">
+                            <img class="img-fluid mb-lg-0 grayscale-hover" src="assets/img/VWR_Interactive_Virtual_Environment_.png" alt="..." />
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                                        <h4 class="text-white">Virtual Environment</h4>
+                                        <p class="mb-0 text-white-50">Need an interactive virtual environment? We create immersive spaces like classrooms, hospitals, and everything in between.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Two Row-->
+                    <div class="row gx-0 mb-lg-5 justify-content-center">
+                        <div class="col-lg-6">
+                            <video class="img-fluid grayscale-hover" autoplay muted loop playsinline>
+                                <source src="assets/video/VWR_Interactive_Virtual_Environment.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="col-lg-6 order-lg-first">
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-right">
+                                        <p class="mb-0 text-white-50">Perfect for training, education, or showcasing your vision. Let's bring your ideas to virtual life!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center" style="margin-top: 48px;">
+                    <div class="col-xl-8 col-lg-7">
+                        <img class="img-fluid mb-3 mb-lg-0 grayscale-hover" src="assets/img/VWR_Architectural_Rendering.png" alt="..." />
+                    </div>
+                    
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Architectural Rendering</h4>
+                            <p class="text-black-50 mb-0">Need to bring your architectural designs to life? We use Unreal Engine to create top-notch videos, still images, and virtual walkthroughs for any project. From towering office buildings to charming homes, we've got you covered! Want to see your vision in vivid detail? Let's get started!</p>
+                        </div>
+                    </div>
+                </div>
+                </div>    
+            </div>
+        </section>
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <i class="far fa-paper-plane fa-2x mb-2 text-primary"></i>
+                        <h2 class="text-black mb-5">Drop us a note!</h2>
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Email address input-->
+                            <div class="row input-group-newsletter">
+                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Email" aria-label="Email" data-sb-validations="required,email" /></div>
+                                <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Submit</button></div>
+                            </div>
+                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
+                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3 mt-2 text-white">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <!-- <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">+1 (555) 902-8832</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                </div> -->
+            </div>
+        </section>
+        <!-- DESKTOP ONLY: Footer Menu -->
+    <div id="footer">
+
+        <div class="footer-links">
+  
+          <div class="dropdown">
+            <button id="dropdownMenuBtn">Legal</button>
+            <div id="dropdownMenu" class="dropdown-content">
+              <button id="open-privacy">Privacy Policy</button>
+              <button id="open-terms">Terms of Use</button>
+              <button id="open-disclaimer">Disclaimer</button>
+            </div>
+          </div>
+          
+          <button id="open-aboutUs">About Us</button>
+          <button id="footer-email-button">Contact Us</button>
+        </div>
+  
+        <div class="footer-copyright">
+          <img src="/assets/img/vwr_logo.png" alt="VWR Logo" />
+        </div>
+  
+        <div class="footer-buttons">
+          <button id="static-page-btn" class="btns">Virtual Experience</button>
+        </div>
+  
+      </div> <!-- Footer end -->
+        <!-- Footer-->
+        <!-- <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; VWR LLC 2024</div></footer> -->
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
