@@ -11168,7 +11168,7 @@ body {
     transition: none; /* Disable transition effect on mobile */
   }
 }
-.signup-section {
+/* .signup-section {
   position: relative;
   padding: 10rem 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%);
@@ -11178,7 +11178,7 @@ body {
   background-size: cover;
 }
 
-/* .signup-section::before {
+.signup-section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -11190,11 +11190,11 @@ body {
   filter: grayscale(100%);
   z-index: 1;
   opacity: 0.7;
-} */
+}
 
 .signup-section * {
   position: relative;
-  z-index: 2; /* Ensure content appears above the image */
+  z-index: 2;
 }
 .signup-section * .form-signup input {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
@@ -11205,7 +11205,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   border: 0;
-}
+} */
 
 .contact-section {
   padding-top: 5rem;

@@ -661,7 +661,47 @@
             <li><a href="#" id="footer-terms">Terms of Use</a></li>
             <li><a href="#" id="footer-disclaimer">Disclaimer</a></li>
         </ul>
-  
+
+        <style>
+            .signup-section {
+            position: relative;
+            padding: 10rem 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: cover;
+            }
+
+            .signup-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0) 30%), 
+                        url("assets/img/VWR_Project_Management_.png") center center/cover no-repeat;
+            filter: grayscale(100%);
+            z-index: 1;
+            opacity: 0.7;
+            }
+
+            .signup-section * {
+            position: relative;
+            z-index: 2; /* Ensure content appears above the image */
+            }
+            .signup-section * .form-signup input {
+            box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+            padding: 1.25rem 2rem;
+            height: auto;
+            font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 80%;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            border: 0;
+            }
+        </style>
         <div class="footer-copyright">
           <img src="assets/img/vwr_logo.png" alt="VWR Logo" />
         </div>
