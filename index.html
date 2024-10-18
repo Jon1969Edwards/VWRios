@@ -43,10 +43,10 @@
                             <a class="nav-link" href="#legal" id="dropdownMenuBtn">Legal</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#projects" id="dropdownMenuBtn">Terms of Use</a>
+                            <a class="nav-link" href="#projects" id="dropdownMenuBtn">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#signup" id="dropdownMenuBtn">Disclaimer</a>
+                            <a class="nav-link" href="#signup" id="dropdownMenuBtn">Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -90,6 +90,8 @@
                 }
             });
 
+
+
             document.addEventListener('DOMContentLoaded', function () {
     // Function to open modal
     function openModal(modalId) {
@@ -111,18 +113,52 @@
     function hideDropdownMenu() {
         const dropdownMenu = document.getElementById('dropdownMenu');
         if (dropdownMenu) {
+            console.log('Hiding dropdown menu...');
             dropdownMenu.style.display = 'none';  // Hide the dropdown
         }
     }
 
-    // Ensure that the modals and buttons are set up after functions are defined
+    // Function to hide the navbar collapse (Bootstrap's collapsible navigation)
+    function hideNavbarCollapse() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            if (navbarToggler) {
+                navbarToggler.click();  // Trigger the collapse by simulating a button click
+                console.log('Hiding navbar collapse...');
+            }
+        }
+    }
+
+    // Set up the modals and buttons
     function setUpModalEvents() {
         // Open the Privacy Policy modal when "Privacy Policy" button is clicked
         const privacyButton = document.getElementById('open-privacy');
         if (privacyButton) {
             privacyButton.addEventListener('click', function () {
                 openModal('privacy-modal');
-                hideDropdownMenu();  // Hide dropdown when clicked
+                hideDropdownMenu();  // Automatically hide dropdown when clicked
+                hideNavbarCollapse();  // Automatically hide the navbar collapse when clicked
+            });
+        }
+
+        // Open the Terms of Use modal when "Terms of Use" button is clicked
+        const termsButton = document.getElementById('open-terms');
+        if (termsButton) {
+            termsButton.addEventListener('click', function () {
+                openModal('terms-modal');
+                hideDropdownMenu();  // Automatically hide dropdown when clicked
+                hideNavbarCollapse();  // Automatically hide the navbar collapse when clicked
+            });
+        }
+
+        // Open the Disclaimer modal when "Disclaimer" button is clicked
+        const disclaimerButton = document.getElementById('open-disclaimer');
+        if (disclaimerButton) {
+            disclaimerButton.addEventListener('click', function () {
+                openModal('disclaimer-modal');
+                hideDropdownMenu();  // Automatically hide dropdown when clicked
+                hideNavbarCollapse();  // Automatically hide the navbar collapse when clicked
             });
         }
 
@@ -143,29 +179,11 @@
                 }
             });
         });
-
-        // Add similar event listeners for other dropdown buttons
-        const termsButton = document.getElementById('open-terms');
-        if (termsButton) {
-            termsButton.addEventListener('click', function () {
-                openModal('terms-modal');
-                hideDropdownMenu();  // Hide dropdown when clicked
-            });
-        }
-
-        const disclaimerButton = document.getElementById('open-disclaimer');
-        if (disclaimerButton) {
-            disclaimerButton.addEventListener('click', function () {
-                openModal('disclaimer-modal');
-                hideDropdownMenu();  // Hide dropdown when clicked
-            });
-        }
     }
 
     // Call the function to set up the modal events
     setUpModalEvents();
 });
-
 
         </script>
 
@@ -436,6 +454,111 @@
             </div>
         </div>
 
+        <!-- Terms of Use Modal -->
+        <div id="terms-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" aria-label="Close">&times;</span>
+                <h3>Terms and Conditions</h3>
+                <div class="text-container">
+                <p>
+                    <h4>Effective Date: www.vwr.dev</h4>
+                    Welcome to VWR’s website ("we," "our," or "us"). These Terms and Conditions ("Terms") govern your access to and use of our website www.vwr.dev. By accessing or using our Website, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use our Website.
+                </p>
+                <p>
+                    <h4>1. Use of the Website</h4>
+                    <p><h4>1.1 Eligibility</h4> You must be at least 13 years old to use our Website. By using our Website, you represent and warrant that you meet this age requirement.</p>
+                    <p><h4>1.2 User Accounts</h4> To access certain features of the Website, you may need to create an account. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
+                    <p><h4>1.3 Prohibited Activities</h4> You agree not to engage in any of the following prohibited activities: 
+                    <ul>
+                        <li>Violating any applicable laws or regulations.</li>
+                        <li>Interfering with or disrupting the Website or servers.</li>
+                        <li>Attempting to gain unauthorized access to any portion of the Website or its systems.</li>
+                        <li>Using the Website for any fraudulent or malicious purpose.</li>
+                    </ul>
+                    </p>
+                </p>
+                <p>
+                    <h4>2. Intellectual Property</h4>
+                    <p><h4>2.1 Ownership</h4> All content on the Website, including but not limited to text, images, graphics, logos, and software, is the property of VWR or its licensors and is protected by intellectual property laws.</p>
+                    <p><h4>2.2 License</h4> We grant you a limited, non-exclusive, non-transferable license to access and use the Website for your personal and non-commercial use. You may not reproduce, distribute, modify, or create derivative works of any content on the Website without our prior written permission.</p>
+                </p>
+                <p>
+                    <h4>3. User Content</h4>
+                    <p><h4>3.1 Submission</h4> If you submit any content to the Website, such as comments, reviews, or other materials, you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, reproduce, modify, and display such content in connection with the Website.</p>
+                    <p><h4>3.2 Responsibility</h4> You are solely responsible for any content you submit and for ensuring that it does not infringe on any third-party rights or violate these Terms.</p>
+                </p>
+                <p>
+                    <h4>4. Disclaimers and Limitation of Liability</h4>
+                    <p><h4>4.1 Disclaimers</h4> The Website is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that the Website will be uninterrupted or error-free.</p>
+                    <p><h4>4.2 Limitation of Liability</h4> To the fullest extent permitted by law, VWR shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of the Website, even if we have been advised of the possibility of such damages.</p>
+                </p>
+                <p>
+                    <h4>5. Links to Third-Party Sites</h4>
+                    Our Website may contain links to third-party websites that are not owned or controlled by us. We are not responsible for the content or practices of any third-party sites and do not endorse or assume any responsibility for them.
+                </p>
+                <p>
+                    <h4>6. Modifications to the Website and Terms</h4>
+                    <p><h4>6.1 Changes to the Website</h4> We may modify or discontinue the Website or any part of it at any time without notice.</p>
+                    <p><h4>6.2 Changes to Terms</h4> We may update these Terms from time to time. The updated Terms will be posted on this page with an updated effective date. Your continued use of the Website after any changes constitutes your acceptance of the new Terms.</p>
+                </p>
+                <p>
+                    <h4>7. Governing Law</h4>
+                    These Terms and Conditions shall be governed by and construed in accordance with the laws of the State of Nevada, without regard to its conflict of law principles. Any disputes arising out of or related to these Terms and Conditions or the use of the Website shall be subject to the exclusive jurisdiction of the state and federal courts located in Carson City, Nevada.
+                </p>
+                <p>
+                    <h4>8. Termination</h4>
+                    We reserve the right to terminate or suspend your access to the Website at our sole discretion, without notice, for any reason, including if you breach these Terms.
+                </p>
+                <p>
+                    <h4>9. Contact Us</h4>
+                    If you have any questions about these Terms or the Website, please contact us at:
+                    <br>
+                    <strong>Email: office(at)vwr.dev</strong>
+                </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimer Modal -->
+        <div id="disclaimer-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" aria-label="Close">&times;</span>
+                <h3><strong>Disclaimer</strong></h3>
+                <div class="text-container">
+                <h4>Effective Date: www.vwr.dev</h4>
+                <p>
+                The information provided on VWR.dev (the "Website") is intended solely for general informational purposes. VWR (the "Company," "we," "our," or "us") strives to ensure the accuracy and completeness of the content on the Website but makes no representations or warranties, express or implied, regarding the reliability, accuracy, or completeness of such content.
+                </p>
+                <h4>1. Limitation of Liability</h4>
+                <p>
+                To the fullest extent permitted by applicable law, VWR shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or in connection with the use of, or inability to use, the Website or the content provided therein. This includes, but is not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages.
+                </p>
+                <h4>2. No Warranty</h4>
+                <p>
+                The Website and its content are provided on an "as is" and "as available" basis. VWR’s Website does not warrant that the Website will be uninterrupted or error-free, nor does it guarantee that the Website or its servers are free from viruses or other harmful components. It is your responsibility to take appropriate precautions to protect your computer systems and data from potential harm.
+                </p>
+                <h4>3. Content Changes</h4>
+                <p>
+                VWR reserves the right to modify, update, or remove any content on the Website at its sole discretion and without prior notice. We do not guarantee that any content will remain available or that the Website will be continuously accessible.
+                </p>
+                <h4>4. Third-Party Links</h4>
+                <p>
+                The Website may contain links to third-party websites or services that are not owned or controlled by [Your Website Name]. We are not responsible for the content, privacy policies, or practices of any third-party sites or services. The inclusion of any link does not imply our endorsement of the third-party site or service.
+                </p>
+                <h4>5. Governing Law</h4>
+                <p>
+                This Disclaimer shall be governed by and construed in accordance with the laws of Carson City, Nevada, USA without regard to its conflict of law principles. Any disputes arising out of or related to this Disclaimer shall be subject to the exclusive jurisdiction of the courts located in Carson City, Nevada, USA
+                </p>
+                <h4>6. Contact Us</h4>
+                <p>
+                If you have any questions or concerns about this Disclaimer or the content on the Website, please contact us at:
+                    <br>
+                    <span><strong>Email: office(at)vwr.dev</strong></span>
+                </p>
+                </div>
+            </div>
+        </div>
+
         <!-- Signup-->
         <section class="signup-section" id="signup">
             <div class="container px-4 px-lg-5">
@@ -481,9 +604,9 @@
             </div>
         </section>
         <!-- Contact-->
-        <section class="contact-section bg-black">
+        <!-- <section class="contact-section bg-black">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5">
+                <div class="row gx-4 gx-lg-5"> -->
                     <!-- <div class="col-md-4 mb-3 mb-md-0">
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
@@ -494,7 +617,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="col-md-4 mb-3 mb-md-0">
+                    <!-- <div class="col-md-4 mb-3 mb-md-0">
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-envelope text-primary mb-2"></i>
@@ -503,7 +626,7 @@
                                 <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="col-md-4 mb-3 mb-md-0">
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
@@ -520,8 +643,8 @@
                     <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                     <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
                 </div> -->
-            </div>
-        </section>
+            <!-- </div>
+        </section> -->
         <!-- DESKTOP ONLY: Footer Menu -->
     <div id="footer">
 
